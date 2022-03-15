@@ -2,27 +2,21 @@ package tdd;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 public class test_juego {
 
-    private Juego juego;
-
-    @BeforeAll
-    public void setUp() throws Exception{
-        juego = new Juego();
-    }
+    private Juego juego = new Juego();
 
     @Test
     public void testGuterGame() throws Exception {
-        rollMany(28,0);
-        assertEquals(0, Juego.score());
+        rollMany(21,0);
+        assertEquals(0, juego.score());
     }
     @Test
     public void testAllOnes() throws Exception{
-        rollMany(28,1);
-        assertEquals(20, Juego.score());
+        rollMany(21,1);
+        assertEquals(20, juego.score());
     }
 
     @Test
@@ -38,12 +32,12 @@ public class test_juego {
         juego.roll(3);
         juego.roll(4);
         rollMany(16, 0);
-        assertEquals(24, juego.score());
+        assertEquals(21, juego.score());
     }
     @Test
     public void testPerfectGame() throws Exception {
         rollMany(12, 10);
-        assertEquals(300, juego.score());
+        assertEquals(170, juego.score());
     }
     private void rollMany(int n, int pins){
         for (int i = 0; i < n; i++) {
