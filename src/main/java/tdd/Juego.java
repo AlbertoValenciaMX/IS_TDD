@@ -26,6 +26,7 @@ public class Juego {
         }
         return score;
     }
+
     public boolean isStrike(int frameIndex) {
         return rolls[frameIndex]==10;
     }
